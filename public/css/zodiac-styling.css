@@ -1,0 +1,154 @@
+html, 
+body {
+    background-image: url("../img/watercolor1.jpg");
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* TOP OF PAGE */
+.jumbotron {
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px #4e0b36, 0 0 25px #5d0c40, 0 0 5px #6c0e4a;
+    border-bottom: 1px solid plum;
+}
+
+.lead {
+    font-size: 1.65rem;
+}
+
+h2 {
+    border-top: 1px solid plum;
+}
+ 
+h2,
+h3,
+h4, 
+.h5,
+h6,
+label,
+.popup{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px #4e0b36, 0 0 25px #5d0c40, 0 0 5px #6c0e4a;
+}
+
+/* #daily-horoscope {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px #4e0b36, 0 0 25px #5d0c40, 0 0 5px #6c0e4a;
+    font-size: 1.2rem;
+} */
+
+/* LINKS */
+a {
+    color: gold;
+}
+
+a:hover{
+    color: fuchsia;
+}
+
+.btn-link {
+    color: #300B4E;
+}
+
+.btn-link:hover{
+    color: gold;
+}
+
+/* ZODIAC SIGN */
+#symbol {
+    max-width: 20%;
+}
+
+/* SIGN HEADER */
+#userinfo {
+    border-bottom: 1px solid plum;
+}
+
+/* FOOTER */
+.footer {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(rgba 255, 0, 0, 0), rgba(78, 11, 194, 1);
+    color: white;
+    
+}
+
+/* ***************** */
+/* PRIMARY BUTTON */
+/* ***************** */
+.btn-primary {
+    color: #fff;
+    background-color: #9125c2;
+    border-color: #9125c2;
+  }
+  
+.btn-primary:hover {
+    color: #fff;
+    background-color: #551a8b;
+    border-color: #5c1a8b;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(145, 37, 194, 0.5);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #9125c2;
+    border-color: #9125c2;
+}
+
+.btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #5c1a8b;
+    border-color: #560574;
+    box-shadow: 0 0 0 0.2rem rgba(145, 37, 194, 0.5);
+}
+
+/* ***************** */
+/* SUCCESS BUTTON */
+/* ***************** */
+.btn-success {
+    color: #fff;
+    background-color: #9125c2;
+    border-color: #9125c2;
+  }
+  
+.btn-success:hover {
+    color: #fff;
+    background-color: #551a8b;
+    border-color: #5c1a8b;
+}
+
+.btn-success:focus, .btn-success.focus {
+    box-shadow: 0 0 0 0.2rem rgba(145, 37, 194, 0.5);
+}
+
+.btn-success.disabled, .btn-success:disabled {
+    background-color: #9125c2;
+    border-color: #9125c2;
+}
+
+.btn-success:not([disabled]):not(.disabled):active, .btn-success:not([disabled]):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #5c1a8b;
+    border-color: #560574;
+    box-shadow: 0 0 0 0.2rem rgba(145, 37, 194, 0.5);
+}
+
+.list-group-item {
+    background: #AE5BB3;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px #4e0b36, 0 0 25px #5d0c40, 0 0 5px #6c0e4a;
+}

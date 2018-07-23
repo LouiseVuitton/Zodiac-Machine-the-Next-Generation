@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zodiac Machine: The Next Generation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  </head>
+  
+  <body>
+    <link rel="stylesheet" href="/css/zodiac-styling.css">
+
+      <!-- ========
+          CARD 1
+      ==========-->
+      <div class="jumbotron jumbotron-fluid text-white text-center mb-0">
+        <h1 class="display-3">Zodiac Machine: The Next Generation</h1>
+        <p class="lead mt-3 pt-3">creative horoscopes for all!</p>
+      </div>
+  
+      <h2 class="card-title text-white text-center pt-3 pb-0">Enter your date of birth below</h2>
+        <form class="text-white form-row col-sm-5 col-md-4 col-lg-3 mx-auto pt-4 pb-4">
+          <div class="mx-auto pr-1">
+            <label class="h5" for="month">Month</label>
+                <div>
+                  <select class="col-12 btn bg-white text-dark" name="month" id="birthmonth">
+                      <option value="X">Month</option>
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option> 
+                  </select>  
+                </div>    
+            </div>
+          <div class="mx-auto pl-1">
+          <label class="h5" for="day">Day</label>
+            <div>
+              <select class="col-12 btn bg-white text-dark" name="day" id="birthday">
+                <option value="X">Day</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option> 
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+  <!-- ===================
+            BUTTON
+        ========================-->
+        <div class="text-center my-0 py-5" id="userinfo">     
+          <button onclick="signs()" id="button" class="btn btn-primary btn-lg" role="button" data-toggle="button" aria-pressed="true">What's My Sign?</button> 
+        </div> 
+
+        <!-- =============
+            SUN SIGNS
+        =================-->
+        <div>
+          <h3 class="text-white text-center py-4" id="userBirthday"></h3>
+        </div>
+
+        <div class="container mx-auto text-center">
+          <img class="pic card-img img-fluid" id="symbol" alt="Responsive image">
+        </div>
+
+        <div>
+          <h3 class="text-white text-center pt-4" id="userSign"></h3>
+        </div>
+
+  <!-- ===================
+            NEW BUTTON
+        ========================-->
+        <div class="text-center my-0 py-4">     
+          <button onclick="newHoroscope()" id="button" class="btn btn-primary btn-lg" role="button" data-toggle="button" aria-pressed="true">What's My Horoscope?</button> 
+        </div> 
+
+        <div class="text-white popup col-12 mx-auto px-5 py-4" id="form-container moreinfo">
+          <p id="newScope"></p>
+          <p id="compat"></p>
+          <p id="moody"></p>
+          <p id="color"></p>
+          <p id="number"></p>
+          <p id="time"></p>
+        </div>
+
+
+        <h2 class="card-title text-white text-center pt-3 pb-0">Create your own custom horoscope below!</h2>
+        
+        <!-- =============
+            NEW FORM
+        =================-->        
+        <form id="add-file-form" class="text-white col-sm-6 my-0 py-5 mx-auto">
+          <div class="form-group">
+            <label for="file-birthday">Sign</label>
+              <select class="pr-1 form-control col-12 btn bg-white text-dark" name="sign1" id="sign1">
+                <option value="X">Sign</option>
+                <option value="Aries">Aries</option>
+                <option value="Taurus">Taurus</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Leo">Leo</option>
+                <option value="Virgo">Virgo</option>
+                <option value="Libra">Libra</option>
+                <option value="Scorpio">Scorpio</option>
+                <option value="Sagittarius">Sagittarius</option>
+                <option value="Capricorn">Capricorn</option>
+                <option value="Aquarius">Aquarius</option>
+                <option value="Pisces">Pisces</option> 
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="file-sign">Submit your own horoscope below</label>
+            <input type="text" class="pl-1 form-control col-12" id="userHoroscope" placeholder=" Horoscope">
+            <br>
+            <br>
+            <label for="file-sign">Compatibility</label>
+              <select class="pr-1 form-control col-12 btn bg-white text-dark" name="sign2" id="sign2">
+                <option value="X">Sign</option>
+                <option value="Aries">Aries</option>
+                <option value="Taurus">Taurus</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Leo">Leo</option>
+                <option value="Virgo">Virgo</option>
+                <option value="Libra">Libra</option>
+                <option value="Scorpio">Scorpio</option>
+                <option value="Sagittarius">Sagittarius</option>
+                <option value="Capricorn">Capricorn</option>
+                <option value="Aquarius">Aquarius</option>
+                <option value="Pisces">Pisces</option> 
+              </select>
+            <br>
+            <label for="file-sign">Mood</label>
+            <input type="text" class="pl-1 form-control col-12" id="userMood" placeholder=" Mood">
+            <br>
+            <br>
+            <label for="file-sign">Color</label>
+            <input type="text" class="pl-1 form-control col-12" id="userColor" placeholder=" Color">
+            <br>
+            <br>
+            <label for="file-sign">Lucky Number</label>
+            <input type="text" class="pl-1 form-control col-12" id="luckyNumber" placeholder=" Lucky Number">
+            <br>
+            <br>
+            <label for="file-sign">Lucky Time of Day</label>
+            <input type="text" class="pl-1 form-control col-12" id="luckyTime" placeholder=" Lucky Time of Day">    
+          </div>
+          <div class="text-center my-0 py-5" id="userinfo">  
+              <button type="button" onclick="submitFileForm()" class="btn btn-success">Submit</button>
+              <button type="button" onclick="cancelFileForm()" class="btn btn-link">cancel</button>
+            </div>
+        </form>
+
+    <!-- ===========================================
+        FOOTER
+        ============================================== -->
+        <footer class="footer">
+          <div class="container">
+              <p>
+              This is a Code Louisville project created by Chanel Brown. Zodiac images courtesy of <a href="https://medialoot.com/item/zodiac-sign-icons/">Medialoot</a>.
+              </p>
+
+              <p>
+              &copy; 2018
+              </p>
+          </div>
+        </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/zodiac-math.js"></script>
+    <script src="/js/random-scope.js"></script>
+    <script>
+      $(document).ready(function () {
+        refreshFileList();
+        setForm();
+      });
+    </script>
+  
+  </body>
+</html>
