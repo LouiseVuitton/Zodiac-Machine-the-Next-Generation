@@ -122,66 +122,72 @@
         </div>
 
 
-        <h2 class="card-title text-white text-center pt-3 pb-0">Create your own custom horoscope below!</h2>
+        <h2 class="card-title text-white text-center pt-3 pb-0">Don't like your horoscope? Create your own below!</h2>
         
         <!-- =============
             NEW FORM
         =================-->        
         <form id="add-file-form" class="text-white col-sm-6 my-0 py-5 mx-auto">
           <div class="form-group">
-            <label for="file-birthday">Sign</label>
-              <select class="pr-1 form-control col-12 btn bg-white text-dark" name="sign1" id="sign1">
-                <option value="X">Sign</option>
-                <option value="Aries">Aries</option>
-                <option value="Taurus">Taurus</option>
-                <option value="Gemini">Gemini</option>
-                <option value="Cancer">Cancer</option>
-                <option value="Leo">Leo</option>
-                <option value="Virgo">Virgo</option>
-                <option value="Libra">Libra</option>
-                <option value="Scorpio">Scorpio</option>
-                <option value="Sagittarius">Sagittarius</option>
-                <option value="Capricorn">Capricorn</option>
-                <option value="Aquarius">Aquarius</option>
-                <option value="Pisces">Pisces</option> 
+            <label for="sign1">Sign</label>
+              <div>
+                <select placeholder="Your Sign" class="pr-1 form-control col-12 btn bg-white text-dark" name="sign" id="sign1">
+                  <option value="" disabled selected>Sign</option>
+                  <option value="Aries">Aries</option>
+                  <option value="Taurus">Taurus</option>
+                  <option value="Gemini">Gemini</option>
+                  <option value="Cancer">Cancer</option>
+                  <option value="Leo">Leo</option>
+                  <option value="Virgo">Virgo</option>
+                  <option value="Libra">Libra</option>
+                  <option value="Scorpio">Scorpio</option>
+                  <option value="Sagittarius">Sagittarius</option>
+                  <option value="Capricorn">Capricorn</option>
+                  <option value="Aquarius">Aquarius</option>
+                  <option value="Pisces">Pisces</option> 
               </select>
+            </div>
           </div>
           <div class="form-group">
-            <label for="file-sign">Submit your own horoscope below</label>
-            <input type="text" class="pl-1 form-control col-12" id="userHoroscope" placeholder=" Horoscope">
+            <label for="file-sign2">Don't like your horoscope? Submit your own below!</label>
+            <input type="text" class="pl-1 form-control col-12" id="userHoroscope" placeholder="  Horoscope">
             <br>
             <br>
-            <label for="file-sign">Compatibility</label>
-              <select class="pr-1 form-control col-12 btn bg-white text-dark" name="sign2" id="sign2">
-                <option value="X">Sign</option>
-                <option value="Aries">Aries</option>
-                <option value="Taurus">Taurus</option>
-                <option value="Gemini">Gemini</option>
-                <option value="Cancer">Cancer</option>
-                <option value="Leo">Leo</option>
-                <option value="Virgo">Virgo</option>
-                <option value="Libra">Libra</option>
-                <option value="Scorpio">Scorpio</option>
-                <option value="Sagittarius">Sagittarius</option>
-                <option value="Capricorn">Capricorn</option>
-                <option value="Aquarius">Aquarius</option>
-                <option value="Pisces">Pisces</option> 
-              </select>
+          <div>  
+            <label for="file-sign2">Compatibility</label>
+              <div>
+                <select placeholder="Another Sign" name="sign2" class="pr-1 form-control col-12 btn bg-white text-dark" id="sign2">
+                  <option value="" disabled selected>Sign</option>
+                  <option value="Aries">Aries</option>
+                  <option value="Taurus">Taurus</option>
+                  <option value="Gemini">Gemini</option>
+                  <option value="Cancer">Cancer</option>
+                  <option value="Leo">Leo</option>
+                  <option value="Virgo">Virgo</option>
+                  <option value="Libra">Libra</option>
+                  <option value="Scorpio">Scorpio</option>
+                  <option value="Sagittarius">Sagittarius</option>
+                  <option value="Capricorn">Capricorn</option>
+                  <option value="Aquarius">Aquarius</option>
+                  <option value="Pisces">Pisces</option> 
+                </select>
+              </div>
+          </div>    
             <br>
             <label for="file-sign">Mood</label>
-            <input type="text" class="pl-1 form-control col-12" id="userMood" placeholder=" Mood">
+            <input type="text" class="pl-1 form-control col-12" id="userMood" placeholder="  Mood">
             <br>
             <br>
             <label for="file-sign">Color</label>
-            <input type="text" class="pl-1 form-control col-12" id="userColor" placeholder=" Color">
+            <input type="text" class="pl-1 form-control col-12" id="userColor" placeholder="  Color">
             <br>
             <br>
             <label for="file-sign">Lucky Number</label>
-            <input type="text" class="pl-1 form-control col-12" id="luckyNumber" placeholder=" Lucky Number">
+            <input type="text" class="pl-1 form-control col-12" id="luckyNumber" placeholder="  Lucky Number">
             <br>
             <br>
             <label for="file-sign">Lucky Time of Day</label>
-            <input type="text" class="pl-1 form-control col-12" id="luckyTime" placeholder=" Lucky Time of Day">    
+            <input type="text" class="pl-1 form-control col-12" id="luckyTime" placeholder="  Lucky Time of Day">    
           </div>
           <div class="text-center my-0 py-5" id="userinfo">  
               <button type="button" onclick="submitFileForm()" class="btn btn-success">Submit</button>
