@@ -100,8 +100,13 @@ router.put('/file/:fileId', function(req, res, next) {
       return res.status(404).json({message: "File not found"});
     }
   
-    file.title = req.body.title;
-    file.description = req.body.description;
+    file.sign1 = req.body.sign1;
+    file.userHoroscope = req.body.userHoroscope;
+    file.sign2 = req.body.sign2;
+    file.userMood = req.body.userMood;
+    file.userColor = req.body.userColor;
+    file.luckyNumber = req.body.luckyNumber;
+    file.luckyTime = req.body.luckyTime;
   
     file.save(function(err, savedFile) {
       if (err) {

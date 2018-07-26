@@ -18,11 +18,6 @@ function renderFiles(files) {
   const listItems = files.map(file => `
     <li class="list-group-item">
       <strong>${file.sign1}</strong> - ${file.userHoroscope}
-      Compatibility: ${file.sign2} 
-      Mood: ${file.userMood}
-      Color: ${file.userColor}
-      Lucky Number: ${file.luckyNumber}
-      Lucky Time of Day: ${file.luckyTime}
       <span class="pull-right">
         <button type="button" class="btn btn-xs btn-default" onclick="handleEditFileClick(this)" data-file-id="${file._id}">Edit</button>
         <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteFileClick(this)" data-file-id="${file._id}">Del</button>
@@ -53,13 +48,13 @@ function submitFileForm() {
   console.log("You clicked 'submit'. Congratulations.");
  
   const fileData = {
-    sign: $('#sign1').val(),
-    horoscope: $('#userHoroscope').val(),
-    compatibility: $('#sign2').val(),
-    mood: $('#userMood').val(),
-    color: $('#userColor').val(),
-    number: $('#luckyNumber').val(),
-    time: $('#luckyTime').val(),
+    sign: $('#file-sign1').val(),
+    horoscope: $('#file-userHoroscope').val(),
+    compatibility: $('#file-sign2').val(),
+    mood: $('#file-userMood').val(),
+    color: $('#file-userColor').val(),
+    number: $('#file-luckyNumber').val(),
+    time: $('#file-luckyTime').val(),
   };
 
 //   console.log("Your file data", fileData);
@@ -104,6 +99,13 @@ function handleEditFileClick(element) {
 
   const file = window.fileList.find(file => file._id === fileId);
   if (file) {
+    $('#file-sign1').val(file.sign1),
+    $('#file-userHoroscope').val(file.userHoroscope),
+    $('#file-sign2').val(file.sign2),
+    $('#file-userMood').val(file.userMood),
+    $('#file-userColor').val(file.userColor),
+    $('#file-luckyNumber').val(file.luckyNumber),
+    $('#file-luckyTime').val(file.luckyTime),
     setForm(file)
   }
 }
@@ -113,8 +115,13 @@ function setForm(data) {
   data = data || {};
 
   const file = {
-    title: data.title || '',
-    description: data.description || '',
+    sign1: data.sign1 || '',
+    horoscope: data.userHoroscope || '',
+    compatibility: data.sign2 || '',
+    mood: data.userMood || '',
+    color: data.userColor || '',
+    number: data.luckyNumber || '',
+    time: data.luckyTime || '',
     _id: data._id || '',
   };
 

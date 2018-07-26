@@ -26,7 +26,7 @@
             <label class="h5" for="month">Month</label>
                 <div>
                   <select class="col-12 btn bg-white text-dark" name="month" id="birthmonth">
-                      <option value="X">Month</option>
+                      <option value="" disabled selected>Month</option>
                       <option value="1">January</option>
                       <option value="2">February</option>
                       <option value="3">March</option>
@@ -46,7 +46,7 @@
           <label class="h5" for="day">Day</label>
             <div>
               <select class="col-12 btn bg-white text-dark" name="day" id="birthday">
-                <option value="X">Day</option>
+                <option value="" disabled selected>Day</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -121,7 +121,6 @@
           <p id="time"></p>
         </div>
 
-
         <h2 class="card-title text-white text-center pt-3 pb-0">Don't like your horoscope? Create your own below!</h2>
         
         <!-- =============
@@ -150,7 +149,7 @@
           </div>
           <div class="form-group">
             <label for="file-sign2">Don't like your horoscope? Submit your own below!</label>
-            <input type="text" class="pl-1 form-control col-12" id="userHoroscope" placeholder="  Horoscope">
+            <input type="text" class="form-control col-12" id="userHoroscope" placeholder="  Horoscope">
             <br>
             <br>
           <div>  
@@ -177,14 +176,11 @@
             <label for="file-sign">Mood</label>
             <input type="text" class="pl-1 form-control col-12" id="userMood" placeholder="  Mood">
             <br>
-            <br>
             <label for="file-sign">Color</label>
             <input type="text" class="pl-1 form-control col-12" id="userColor" placeholder="  Color">
             <br>
-            <br>
             <label for="file-sign">Lucky Number</label>
             <input type="text" class="pl-1 form-control col-12" id="luckyNumber" placeholder="  Lucky Number">
-            <br>
             <br>
             <label for="file-sign">Lucky Time of Day</label>
             <input type="text" class="pl-1 form-control col-12" id="luckyTime" placeholder="  Lucky Time of Day">    
@@ -195,6 +191,16 @@
             </div>
         </form>
 
+        <div class="mx-auto col-10" id="list-container">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <button type="button" class="btn btn-xs btn-default" onclick="handleEditFileClick(this)" data-file-id="${file._id}">Edit</button>
+              <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteFileClick(this)" data-file-id="${file._id}">Del</button>
+            </li>
+          </ul>
+        </div>
+        <br>
+        <br>  
     <!-- ===========================================
         FOOTER
         ============================================== -->
