@@ -2,49 +2,10 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
 
-//Totally fake data
-// const FILES = [
-//   {id: 'horoscope1',
-//        words: 'Are you waiting for word on something, or hoping to hear back from a contact? Things are moving faster than you would expect, though it may still take a little longer for word to finally get to you.',
-//        compatibiliy: 'Sagittarius',
-//        mood: 'Patient',
-//        color: 'Silver',
-//        luckyNumber: 3,
-//        luckyTimeOfDay: '9 am'},
-//    {id: 'horoscope2',
-//        words: 'Are you waiting for word on something, or hoping to hear back from a contact? Things are moving faster than you would expect, though it may still take a little longer for word to finally get to you.',
-//        compatibiliy: 'Sagittarius',
-//        mood: 'Patient',
-//        color: 'Silver',
-//        luckyNumber: 9,
-//        luckyTimeOfDay: '9 am'},
-//    {id: 'horoscope3',
-//        words: 'Are you waiting for word on something, or hoping to hear back from a contact? Things are moving faster than you would expect, though it may still take a little longer for word to finally get to you.',
-//        compatibiliy: 'Sagittarius',
-//        mood: 'Patient',
-//        color: 'Silver',
-//        luckyNumber: 6,
-//        luckyTimeOfDay: '9 am'},
-//    {id: 'horoscope4',
-//        words: 'Are you waiting for word on something, or hoping to hear back from a contact? Things are moving faster than you would expect, though it may still take a little longer for word to finally get to you.',
-//        compatibiliy: 'Sagittarius',
-//        mood: 'Patient',
-//        color: 'Silver',
-//        luckyNumber: 4,
-//        luckyTimeOfDay: '9 am'},
-//    {id: 'horoscope5',
-//        words: 'Are you waiting for word on something, or hoping to hear back from a contact? Things are moving faster than you would expect, though it may still take a little longer for word to finally get to you.',
-//        compatibiliy: 'Sagittarius',
-//        mood: 'Patient',
-//        color: 'Silver',
-//        luckyNumber: 5,
-//        luckyTimeOfDay: '9 am'},
-// ];
-
-
-/**
- * C - reate
- */
+//****************************** */
+// CREATING FILES
+// MAKE SURE TO NAME BACK-END AND FRONT-END FILES CONSISTENTLY.
+//****************************** */
 
 router.post('/file', function(req, res, next) {
   const File = mongoose.model('File');
@@ -70,9 +31,11 @@ router.post('/file', function(req, res, next) {
 });
 
 
-/**
- * R - ead
- */
+//****************************** */
+// READING FILES
+// REMEMBER, THE 
+//****************************** */
+
 router.get('/file/:fileId', function(req, res, next) {
   const { fileId } = req.params;
   // same as 'const fileId = req.params.fileId'
@@ -84,9 +47,14 @@ router.get('/file/:fileId', function(req, res, next) {
 
   res.json(file);
 });
-/**
- * U - pdate
- */
+
+
+//****************************** */
+// UPDATING FILES
+// MAKE SURE TO NAME BACK-END AND FRONT-END FILES CONSISTENTLY.
+// FILE IDS COME FROM MONGOOSE, SO NO NEED TO NAME THEM!
+//****************************** */
+
 router.put('/file/:fileId', function(req, res, next) {
   const File = mongoose.model('File');
   const fileId = req.params.fileId;
@@ -101,12 +69,12 @@ router.put('/file/:fileId', function(req, res, next) {
     }
   
     file.sign1 = req.body.sign1;
-    file.userHoroscope = req.body.userHoroscope;
+    file.words = req.body.words;
     file.sign2 = req.body.sign2;
-    file.userMood = req.body.userMood;
-    file.userColor = req.body.userColor;
+    file.mood = req.body.mood;
+    file.color = req.body.color;
     file.luckyNumber = req.body.luckyNumber;
-    file.luckyTime = req.body.luckyTime;
+    file.luckyTimeOfDay = req.body.luckyTimeOfDay;
   
     file.save(function(err, savedFile) {
       if (err) {
@@ -120,11 +88,12 @@ router.put('/file/:fileId', function(req, res, next) {
 });
   
 
-/**
- * ¯\_(ツ)_/¯ - list
- */
+//****************************** */
+// LISTING FILES ON SCREEN
+//  {{deleted: $ne: true}} IS THE MONGOOSE WAY OF EXCLUDING SOFT DELETED FILES FROM APPEARING ONSCREEN
+//****************************** */
 router.get('/file', function(req, res, next) {
-  mongoose.model('File').find({}, function(err, files) {
+  mongoose.model('File').find({deleted: {$ne: true}}, function(err, files) {
     if (err) {
       console.log(err);
       return res.status(500).json(err);
@@ -135,9 +104,10 @@ router.get('/file', function(req, res, next) {
 });
 
 
-/**
- * D - elete
- */
+//****************************** */
+// DELETING FILES - SOFT DELETE EDITION
+// THIS INVOLVES: MONGOOSE, JSON
+//****************************** */
 
 router.delete('/file/:fileId', function(req, res, next) {
   const File = mongoose.model('File');

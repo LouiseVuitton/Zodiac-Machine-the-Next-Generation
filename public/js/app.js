@@ -17,7 +17,7 @@ function getFiles() {
 function renderFiles(files) {
   const listItems = files.map(file => `
     <li class="list-group-item">
-      <strong>${file.sign1}</strong> - ${file.userHoroscope}
+      <strong>${file.sign1}</strong> - ${file.words}
       <span class="pull-right">
         <button type="button" class="btn btn-xs btn-default" onclick="handleEditFileClick(this)" data-file-id="${file._id}">Edit</button>
         <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteFileClick(this)" data-file-id="${file._id}">Del</button>
@@ -48,17 +48,17 @@ function submitFileForm() {
   console.log("You clicked 'submit'. Congratulations.");
  
   const fileData = {
-    sign: $('#file-sign1').val(),
-    horoscope: $('#file-userHoroscope').val(),
-    compatibility: $('#file-sign2').val(),
-    mood: $('#file-userMood').val(),
-    color: $('#file-userColor').val(),
-    number: $('#file-luckyNumber').val(),
-    time: $('#file-luckyTime').val(),
+    _id: $('#id').val(),
+    sign1: $('#sign1').val(),
+    words: $('#userHoroscope').val(),
+    compatibility: $('#sign2').val(),
+    mood: $('#userMood').val(),
+    color: $('#userColor').val(),
+    number: $('#luckyNumber').val(),
+    time: $('#luckyTime').val(),
   };
 
-//   console.log("Your file data", fileData);
-// };
+  console.log("Your file data", fileData);
 
   let method, url;
   if (fileData._id) {
@@ -95,18 +95,21 @@ function cancelFileForm() {
   
 
 function handleEditFileClick(element) {
+  console.log("you are editing the file");
   const fileId = element.getAttribute('data-file-id');
 
   const file = window.fileList.find(file => file._id === fileId);
+
   if (file) {
-    $('#file-sign1').val(file.sign1),
-    $('#file-userHoroscope').val(file.userHoroscope),
-    $('#file-sign2').val(file.sign2),
-    $('#file-userMood').val(file.userMood),
-    $('#file-userColor').val(file.userColor),
-    $('#file-luckyNumber').val(file.luckyNumber),
-    $('#file-luckyTime').val(file.luckyTime),
-    setForm(file)
+    $('#id').val(file._id);
+    $('#sign1').val(file.sign1);
+    $('#userHoroscope').val(file.words);
+    $('#sign2').val(file.compatibility);
+    $('#userMood').val(file.mood);
+    $('#userColor').val(file.color);
+    $('#luckyNumber').val(file.luckyNumber);
+    $('#luckyTime').val(file.luckyTimeOfDay);
+    // setForm(file)
   }
 }
 
@@ -116,22 +119,22 @@ function setForm(data) {
 
   const file = {
     sign1: data.sign1 || '',
-    horoscope: data.userHoroscope || '',
-    compatibility: data.sign2 || '',
-    mood: data.userMood || '',
-    color: data.userColor || '',
+    horoscope: data.words || '',
+    compatibility: data.compatibility || '',
+    mood: data.mood || '',
+    color: data.color || '',
     number: data.luckyNumber || '',
-    time: data.luckyTime || '',
+    time: data.luckyTimeOfDay || '',
     _id: data._id || '',
   };
 
   $('#sign1').val(file.sign1);
-  $('#sign2').val(file.sign2);
-  $('#userHoroscope').val(file.userHoroscope);
-  $('#userMood').val(file.userMood);
-  $('#userColor').val(file.userColor);
+  $('#sign2').val(file.compatibility);
+  $('#userHoroscope').val(file.words);
+  $('#userMood').val(file.mood);
+  $('#userColor').val(file.color);
   $('#luckyNumber').val(file.luckyNumber);
-  $('#luckyTime').val(file.luckyTime);
+  $('#luckyTime').val(file.luckyTimeOfDay);
 
 
   if (file._id) {
@@ -145,7 +148,7 @@ function handleDeleteFileClick(element) {
   const fileId = element.getAttribute('data-file-id');
 
   if (confirm("Are you sure?")) {
-    console.log("File", fileId, "is DOOMED!!!!!!");
+    deleteFile(fileId);
   }
 }
 
