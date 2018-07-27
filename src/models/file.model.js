@@ -1,4 +1,4 @@
-// Load mongoose package
+// LOAD MONGOOSE PACKAGE
 const mongoose = require('mongoose');
 
 const FileSchema = new mongoose.Schema({

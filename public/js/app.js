@@ -1,6 +1,8 @@
-/**
- * Fetches data from the api
- */
+//****************************** */
+// FETCHING FILES
+// FETCHING FILES FROM THE API
+//****************************** */
+
 function getFiles() {
   return fetch('/api/file')
     .then(response => response.json())
@@ -11,9 +13,12 @@ function getFiles() {
     .catch(error => console.error("GETFILES:", error));
 }
 
-/**
- * Render a list of files
- */
+
+//****************************** */
+// RENDER (READING) LIST OF FILES
+// file.sign1 and file.words RELATES TO THE FileSchema IN file.model.js
+//****************************** */
+
 function renderFiles(files) {
   const listItems = files.map(file => `
     <li class="list-group-item">
@@ -29,9 +34,12 @@ function renderFiles(files) {
 }
 
 
-/**
- * Fetch files from the API and render to the page
- */
+//****************************** */
+// FETCHING FILES
+// FETCHING FILES FROM THE API AND RENDERING IT ON THE PAGE
+// HERE WE ALSO CREATE READ, UPDATE, AND DELETE THE USER DATA
+//****************************** */
+
 function refreshFileList() {
   getFiles()
     .then(files => {

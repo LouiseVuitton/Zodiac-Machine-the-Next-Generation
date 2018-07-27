@@ -33,7 +33,7 @@ router.post('/file', function(req, res, next) {
 
 //****************************** */
 // READING FILES
-// REMEMBER, THE 
+// 
 //****************************** */
 
 router.get('/file/:fileId', function(req, res, next) {

@@ -5,13 +5,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const config = require('./config');
 
-// Load mongoose packagez
+// LOAD MONGOOSE PACKAGEZ
 const mongoose = require('mongoose');
 
-// Connect to MongoDB and create/use database as configured
+// CONNECT TO MongoDB, CREATE AND USE DATABASE
 mongoose.connection.openUri(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}/${config.db.dbName}`);
 
-// Import all models
+// IMPORT MODELS
 require('./models/file.model.js');
 
 const app = express();
